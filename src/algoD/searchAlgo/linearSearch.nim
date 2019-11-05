@@ -10,6 +10,13 @@ proc search_linear*[T](inputArr: openArray[T], val: T) : int =
             return i
     return -1
 
-when isMainModule:
-    echo search_linear([1,2,3,4,5], 55)
+proc search_linear*[T, K](inputArr: openArray[T], val: K, c:proc(item: T):K{.closure.}): int =
+    ## Linear Search with callback for user-defined type
+    for i in 0..<len(inputArr):
+        if c(inputArr[i]) == val:
+            return i
+    return -1
+
+
+
 
