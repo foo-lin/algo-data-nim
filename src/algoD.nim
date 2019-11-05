@@ -2,7 +2,6 @@
 # exports the main API in this file. Note that you cannot rename this file
 # but you can remove it if you wish.
 
-proc addp*(x, y: int): int =
+proc add*(x, y: int): int =
   ## Adds two files together.
-  echo "hello wrold"
   return x + y

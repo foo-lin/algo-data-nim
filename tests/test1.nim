@@ -9,4 +9,4 @@ import unittest
 
 import algoD
 test "can add":
-  check addp(5, 5) == 10
+  check add(5, 5) == 10

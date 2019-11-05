@@ -1,8 +1,8 @@
 # Package
 
 version       = "0.1.0"
-author        = "Anonymous"
-description   = "A new awesome nimble package"
+author        = "foo-lin"
+description   = "basic Data Structure and Algo"
 license       = "MIT"
 srcDir        = "src"
 
