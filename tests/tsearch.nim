@@ -4,21 +4,17 @@ import unittest
 
 import sugar
 
-type
-    Person = object
-        name: string
-        age: int
-
-var personList = [Person(name: "John", age: 24), Person(name: "Jack", age: 44), Person(name: "Jill", age: 34), Person(name: "Jilly", age:18 )]
+import personData
 
 
-test "found linear Search using int":
+
+test "successful linear Search using int":
     check search_linear([1,2,3,4], 2) == 1
 
-test "not found linear Search using int":
+test "unsuccessful linear Search using int":
     check search_linear([1,2,3,4], 22) == -1
 
-test "found linear Search using string":
+test "successful linear Search using string":
     check search_linear(["hello", "world", "linear", "search"], "search") == 3
 
 test "linear search on user define type on person.age":
