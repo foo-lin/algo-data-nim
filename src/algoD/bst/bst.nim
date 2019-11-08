@@ -2,11 +2,13 @@ import node
 
 type
     BST*[T] = object
-        root : NodeBst[T]
+        root* : NodeBst[T]
+        length: int
 
 proc insert*[T](this:var BST[T], value: T) =
     ## Insert a node in the bst 
     var newNode = NodeBst[T](val: value)
+    this.length.inc
     if isNil(this.root):
         this.root = newNode
     else:
@@ -25,6 +27,8 @@ proc insert*[T](this:var BST[T], value: T) =
         else:
             parentNode.r_child = newNode
             
+proc `len`*[T](this: BST[T]):int = this.length
+
 proc find*[T](this: BST[T], value: T):bool =
     ## Return true if the node if found else false
     if isNil(this.root):
@@ -40,11 +44,3 @@ proc find*[T](this: BST[T], value: T):bool =
             found = true
     return found
 
-var a = BST[int]()
-
-a.insert(10)
-a.insert(2)
-a.insert(3)
-a.insert(34)
-echo a.find(10)
-echo repr(a)
