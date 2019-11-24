@@ -6,7 +6,7 @@ type
     ## FIFO
     Queue*[T] = object
         maxSize*: int
-        ll: SingleLL[T]
+        ll*: SingleLL[T]
 
 proc initQueue*[T](size: int = 10) : Queue[T] =
     ## Initialize a queue of give size
@@ -28,3 +28,6 @@ proc dequeue*[T](this: var Queue[T]) : T =
 proc peek*[T](this: Queue[T]):T =
     if this.ll.len > 0:
         return this.ll.head.val
+
+proc isEmpty*[T](this: Queue[T]):bool = this.ll.len == 0
+

@@ -5,9 +5,9 @@ type
         next*: Node[T]
 
     SingleLL*[T] = object
-        length: int
-        head: Node[T]
-        tail: Node[T]
+        length*: int
+        head*: Node[T]
+        tail*: Node[T]
 
 proc `len`*(this: SingleLL): int = this.length
 
@@ -44,7 +44,7 @@ proc pop*[T](this: var SingleLL[T]): T =
 
 proc shift*[T](this: var SingleLL[T]):T =
     ## Removes the first node from the linkList and return the node's value
-    if this.length == 0: return -1 #TODO:
+    if this.length == 0: return  #TODO:
     var tempNode = this.head
     this.head = this.head.next
     this.length.dec
@@ -58,6 +58,7 @@ proc unshift*[T](this: var SingleLL[T], value: T) =
     if this.length == 0:
         this.head = newNode
         this.tail = newNode
+        echo "sdf"
         return
     newNode.next = this.head
     this.head = newNode

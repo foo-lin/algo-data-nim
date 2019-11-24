@@ -44,3 +44,8 @@ proc find*[T](this: BST[T], value: T):bool =
             found = true
     return found
 
+proc height*[T](this: NodeBst[T]): int = 
+    if isNil(this):
+        return 0
+    return max(height(this.l_child), height(this.r_child)) + 1
+

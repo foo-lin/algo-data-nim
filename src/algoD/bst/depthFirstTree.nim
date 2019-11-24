@@ -24,3 +24,6 @@ proc postOrderTraversal*[T](this: BST[T]):seq[T] =
             helperRecc(node.r_child, resultSeq)
             resultSeq.add(node.val)
     this.root.helperRecc(result)
+
+
+
